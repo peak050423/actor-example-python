@@ -21,11 +21,11 @@
 						"fields": [
 							"sum",
 							"company_url",
-							"second_number"
+							"follower_number"
 						]
 					},
 					"display": {
-						"component": "table",
+						"component": "json",
 						"properties": {
 							"sum": {
 								"label": "Sum",
@@ -35,8 +35,8 @@
 								"label": "Company Url",
 								"format": "number"
 							},
-							"second_number": {
-								"label": "Second number",
+							"follower_number": {
+								"label": "Follower number",
 								"format": "number"
 							}
 						}

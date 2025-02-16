@@ -10,7 +10,7 @@
       "editor": "textfield",
       "prefill": "https://www.example.com"
     },
-    "second_number": {
+    "follower_number": {
       "title": "Follower number",
       "type": "integer",
       "description": "The number you want to add to the first number.",
@@ -20,6 +20,6 @@
   },
   "required": [
     "company_url",
-    "second_number"
+    "follower_number"
   ]
 }

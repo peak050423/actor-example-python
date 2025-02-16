@@ -8,12 +8,12 @@ async def main():
 
         # Structure of input is defined in .actor/input_schema.json
         company_url = actor_input.get('company_url')
-        second_number = actor_input.get('second_number')
+        follower_number = actor_input.get('follower_number')
 
         print(f'Company_url: {company_url}')
-        print(f'Second number: {second_number}')
+        print(f'Follower number: {follower_number}')
 
-        result = f"{company_url} + {second_number}"
+        result = f"{company_url} + {follower_number}"
 
         print(f'The result is: {result}')
 
@@ -21,7 +21,7 @@ async def main():
         await Actor.push_data([
             {
                 'company_url': company_url,
-                'second_number': second_number,
+                'follower_number': follower_number,
                 'sum': result,
             },
         ])
