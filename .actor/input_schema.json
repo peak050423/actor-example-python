@@ -3,16 +3,12 @@
   "type": "object",
   "schemaVersion": 1,
   "properties": {
-    "scraper_type": {
-      "title": "Scraper Type",
+    "cookies": {
+      "title": "Cookies",
       "type": "string",
-      "description": "The type of scraper you want to use.",
-      "enum": [
-        "Company Follower",
-        "Post Liker"
-      ],
-      "editor": "select",
-      "prefill": "Company Follower"
+      "description": "The cookie value to be used for the scraping session.",
+      "editor": "textfield",
+      "prefill": "your_cookie_here"
     },
     "company_url": {
       "title": "Company Url",
@@ -28,17 +24,11 @@
       "description": "The follower count you want to scrape.",
       "editor": "number",
       "prefill": 2
-    },
-    "post_url": {
-      "title": "Post Url",
-      "type": "string",
-      "description": "The post URL you want to scrape liker information from.",
-      "editor": "textfield",
-      "prefill": "https://www.example.com",
-      "pattern": "^https://www\\.linkedin\\.com/feed/update/urn:li:activity:[a-zA-Z0-9]+$"
     }
   },
   "required": [
-    "scraper_type"
+    "cookies",
+    "company_url",
+    "follower_number"
   ]
 }
