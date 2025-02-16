@@ -21,6 +21,7 @@
 						"fields": [
 							"company_url",
 							"follower_number",
+							"result",
 							"result.positionTitle",
 							"result.profileUrl"
 						]
@@ -35,6 +36,10 @@
 							"follower_number": {
 								"label": "Follower Number",
 								"format": "number"
+							},
+							"result": {
+								"label": "Result",
+								"format": "object"
 							},
 							"result.positionTitle": {
 								"label": "Position Title",

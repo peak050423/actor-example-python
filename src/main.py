@@ -1,7 +1,7 @@
 from apify import Actor
 from datetime import datetime
 import platform
-import io
+import json
 import csv
 from .company_follower import getfollowers
 from .post_likers import getLikersList
@@ -88,6 +88,6 @@ async def main():
             {
                 'company_url': company_url,
                 'follower_number': follower_number,
-                'result': result,
+                'result': json.loads(result),
             },
         ])
