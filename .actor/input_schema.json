@@ -7,7 +7,7 @@
       "title": "Company URL",
       "type": "string",
       "description": "The number you want to add to the second number.",
-      "editor": "string",
+      "editor": "textfield",
       "prefill": "https://www.example.com"
     },
     "follower_number": {
