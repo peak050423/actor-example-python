@@ -19,33 +19,65 @@
 					"title": "Scraped Results",
 					"transformation": {
 						"fields": [
-							"company_url",
-							"follower_number",
-							"result"
+							"fullName",
+							"jobTitle",
+							"profileUrl",
+							"imageUrl",
+							"connectionDegree",
+							"timestamp",
+							"followedAt",
+							"positionTitle",
+							"companyLogo",
+							"companyName",
+							"locationName"
 						]
 					},
 					"display": {
 						"component": "table",
 						"properties": {
-							"company_url": {
-								"label": "Company URL",
+							"fullName": {
+								"label": "fullName",
 								"format": "string"
 							},
-							"follower_number": {
-								"label": "Follower Number",
-								"format": "number"
-							},
-							"result": {
-								"label": "Result",
-								"format": "object"
-							},
-							"result.positionTitle": {
-								"label": "Position Title",
+							"jobTitle": {
+								"label": "jobTitle",
 								"format": "string"
 							},
-							"result.profileUrl": {
+							"profileUrl": {
 								"label": "profileUrl",
+								"format": "link"
+							},
+							"imageUrl": {
+								"label": "imageUrl",
+								"format": "link"
+							},
+							"connectionDegree": {
+								"label": "connectionDegree",
 								"format": "string"
+							},
+							"timestamp": {
+								"label": "timestamp",
+								"format": "date"
+							},
+							"followedAt": {
+								"label": "followedAt",
+								"format": "string"
+							},
+							"positionTitle": {
+								"label": "positionTitle",
+								"format": "string"
+							},
+							"companyLogo": {
+								"label": "companyLogo",
+								"format": "link"
+							},
+							"companyName": {
+								"label": "companyName",
+								"format": "link"
+							},
+							"locationName": {
+								"label": "locationName",
+								"format": "link"
 							}
 						}
 					}

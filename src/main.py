@@ -1,7 +1,7 @@
 from apify import Actor
 from datetime import datetime
 import platform
-import io
+import json
 import csv
 from .company_follower import getfollowers
 from .post_likers import getLikersList
@@ -84,25 +84,6 @@ async def main():
         print(f'Follower number: {follower_number}')
         print(f'Scraper Type: {scraper_type}')
 
-        # Use StringIO to create an in-memory CSV string
-        output = io.StringIO()
-
-        # Create a CSV DictWriter object
-        writer = csv.DictWriter(output, fieldnames=result[0].keys())
-
-        # Write the header (column names)
-        writer.writeheader()
-
-        # Write the rows (data)
-        writer.writerows(result)
-
-        # Get the CSV data as a string
-        csv_data = output.getvalue()
-
         await Actor.push_data([
-            {
-                'company_url': company_url,
-                'follower_number': follower_number,
-                'result': csv_data,
-            },
+            result
         ])
