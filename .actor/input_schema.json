@@ -13,56 +13,33 @@
       ],
       "editor": "select",
       "prefill": "Company Follower"
+    },
+    "company_url": {
+      "title": "Company Url",
+      "type": "string",
+      "description": "The company URL you want to scrape follower information from.",
+      "editor": "textfield",
+      "prefill": "https://www.example.com",
+      "pattern": "^https://www\\.linkedin\\.com/company/\\d+/admin/dashboard/$",
+      "errorMessage": "Invalid LinkedIn company URL format. Example: https://www.linkedin.com/company/71658149/admin/dashboard/"
+    },
+    "follower_number": {
+      "title": "Follower number",
+      "type": "integer",
+      "description": "The follower count you want to scrape.",
+      "editor": "number",
+      "prefill": 2
+    },
+    "post_url": {
+      "title": "Post Url",
+      "type": "string",
+      "description": "The post URL you want to scrape liker information from.",
+      "editor": "textfield",
+      "prefill": "https://www.example.com",
+      "pattern": "^https://www\\.linkedin\\.com/feed/update/urn:li:activity:[a-zA-Z0-9]+$",
+      "errorMessage": "Invalid LinkedIn post URL format. Example: https://www.linkedin.com/feed/update/urn:li:activity:7290005105632808961"
     }
   },
-  "oneOf": [
-    {
-      "properties": {
-        "scraper_type": {
-          "enum": [
-            "Company Follower"
-          ]
-        },
-        "company_url": {
-          "title": "Company Url",
-          "type": "string",
-          "description": "The company URL you want to scrape follower information from.",
-          "editor": "textfield",
-          "prefill": "https://www.example.com"
-        },
-        "follower_number": {
-          "title": "Follower number",
-          "type": "integer",
-          "description": "The follower count you want to scrape.",
-          "editor": "number",
-          "prefill": 2
-        }
-      },
-      "required": [
-        "company_url",
-        "follower_number"
-      ]
-    },
-    {
-      "properties": {
-        "scraper_type": {
-          "enum": [
-            "Post Liker"
-          ]
-        },
-        "post_url": {
-          "title": "Post Url",
-          "type": "string",
-          "description": "The post URL you want to scrape liker information from.",
-          "editor": "textfield",
-          "prefill": "https://www.example.com"
-        }
-      },
-      "required": [
-        "post_url"
-      ]
-    }
-  ],
   "required": [
     "scraper_type"
   ]

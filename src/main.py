@@ -26,9 +26,19 @@ async def main():
         follower_number = actor_input.get('follower_number')
         scraper_type = actor_input.get('scraper_type')
 
-        print(f'Company_url: {company_url}')
-        print(f'Follower number: {follower_number}')
-        print(f'Scraper Type: {scraper_type}')
+        if scraper_type:
+            if scraper_type == 'Company Follower':
+                if follower_number is None:
+                    raise ValueError('followerNumber parameter is required')
+                if company_url is None:
+                    raise ValueError('companyUrl parameter is required')
+            elif scraper_type == 'Post Like':
+                if not actor_input.get('post_url'):
+                    raise ValueError('postUrl parameter is required')                
+
+        elif not scraper_type:
+            raise ValueError('scraperType parameter is required')
+
 
         current_timestamp = get_current_timestamp()
         result = []
