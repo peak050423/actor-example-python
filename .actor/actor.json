@@ -1,8 +1,8 @@
 {
 	"actorSpecification": 1,
-	"name": "python-example",
-	"title": "Python Example",
-	"description": "Example Python Actor showing how to read the Actor input and push results to a dataset.",
+	"name": "linkedin-scraper",
+	"title": "LinkedIn Scraper",
+	"description": "Scrapers for LinkedIn, designed to efficiently gather data on company followers and post likers. By consolidating the scraping and enrichment processes, these scrapers aim to streamline data collection and reduce costs compared to existing methods.",
 	"version": "0.0",
 	"meta": {
 		"templateId": "python-start"
@@ -13,13 +13,13 @@
 	"storages": {
 		"dataset": {
 			"actorSpecification": 1,
-			"title": "Numbers and their sums",
+			"title": "LinkedIn Scraper",
 			"views": {
-				"sums": {
-					"title": "A sum of two numbers",
+				"results": {
+					"title": "Screped Results",
 					"transformation": {
 						"fields": [
-							"sum",
+							"result",
 							"company_url",
 							"follower_number"
 						]
@@ -27,8 +27,8 @@
 					"display": {
 						"component": "table",
 						"properties": {
-							"sum": {
-								"label": "Sum",
+							"result": {
+								"label": "Result",
 								"format": "json"
 							},
 							"company_url": {

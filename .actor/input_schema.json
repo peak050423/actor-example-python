@@ -3,6 +3,17 @@
   "type": "object",
   "schemaVersion": 1,
   "properties": {
+    "scraper_type": {
+      "title": "Scraper Type",
+      "type": "string",
+      "description": "The type of scraper you want to use.",
+      "enum": [
+        "company_follower",
+        "post_liker"
+      ],
+      "editor": "dropdown",
+      "prefill": "company_follower"
+    },
     "company_url": {
       "title": "Company Url",
       "type": "string",
