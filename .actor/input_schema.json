@@ -8,8 +8,8 @@
       "type": "string",
       "description": "The type of scraper you want to use.",
       "enum": [
-        "company_follower",
-        "post_liker"
+        "Company Follower",
+        "Post Liker"
       ],
       "editor": "select",
       "prefill": "company_follower"
