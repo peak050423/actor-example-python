@@ -12,6 +12,7 @@
 	"dockerfile": "./Dockerfile",
 	"storages": {
 		"dataset": {
+			"actorSpecification": 1,
 			"title": "Numbers and their sums",
 			"views": {
 				"sums": {
