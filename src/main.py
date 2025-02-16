@@ -34,8 +34,7 @@ async def main():
         scraper_type = "1"
 
         if scraper_type == '1':  # Company Followers Scraper
-            company_url = input.get('companyUrl')
-            follower_number = input.get('followerNumber')
+    
 
             if not company_url or not follower_number:
                 raise ValueError('Missing required parameters for company scraper')
