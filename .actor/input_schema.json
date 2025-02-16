@@ -12,7 +12,7 @@
         "Post Liker"
       ],
       "editor": "select",
-      "prefill": "company_follower"
+      "prefill": "Company Follower"
     },
     "company_url": {
       "title": "Company Url",
