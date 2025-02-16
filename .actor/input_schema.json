@@ -7,8 +7,8 @@
       "title": "Cookies",
       "type": "object",
       "description": "The cookie value to be used for the scraping session.",
-      "editor": "textarea",
-      "prefill": {}
+      "editor": "json",
+      "prefill": "{}"
     },
     "company_url": {
       "title": "Company Url",
