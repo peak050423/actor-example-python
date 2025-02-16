@@ -8,7 +8,7 @@
       "type": "string",
       "description": "The number you want to add to the second number.",
       "editor": "number",
-      "prefill": 1
+      "prefill": "htttps://www.example.com"
     },
     "second_number": {
       "title": "Follower number",
