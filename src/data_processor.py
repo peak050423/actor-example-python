@@ -1,6 +1,5 @@
 from .data_fetcher import fetch_data, fetch_multiple_data
 import urllib.parse
-import json
 from datetime import datetime
 import re
 
@@ -62,25 +61,6 @@ def extract_experience_details(entry, experience_data, is_paged_list_component):
         "location": location,
         "companyLogo": f"{root_url}{image_path}" if root_url and image_path else None
     }
-
-def get_experience_data(profile_urn, element_number, follower_number):
-    encoded_profile_urn = urllib.parse.quote(profile_urn)
-    profile_url = f'https://www.linkedin.com/voyager/api/graphql?variables=(profileUrn:{encoded_profile_urn},sectionType:experience,locale:en_US)&queryId=voyagerIdentityDashProfileComponents.a62d9c6739ad5a19fdf61591073dec32'
-
-    experience_data = fetch_data(profile_url)
-
-    if experience_data:
-        records = []
-        if experience_data.get("included"):
-            for entry in experience_data.get("included", [])[0].get("components", {}).get("elements", []):
-                record = extract_experience_details(entry, experience_data)
-                records.append(record)
-                break  # Only process the first entry
-
-        return records
-    else:
-        print(f"Failed to retrieve experience data for {profile_urn}")
-        return {}
     
 def get_correct_experience_data(record, pagedListComponent, experience_data):
     if pagedListComponent:
@@ -98,10 +78,10 @@ def get_correct_experience_data(record, pagedListComponent, experience_data):
     return record
 
 
-def get_experience_datas(profile_urns, follower_number):
+def get_experience_datas(profile_urns, follower_number, cookies):
     profile_urls = [f'https://www.linkedin.com/voyager/api/graphql?variables=(profileUrn:{urllib.parse.quote(profile_urn)},sectionType:experience,locale:en_US)&queryId=voyagerIdentityDashProfileComponents.a62d9c6739ad5a19fdf61591073dec32' for profile_urn in profile_urns]
 
-    experience_datas = fetch_multiple_data(profile_urls, follower_number)
+    experience_datas = fetch_multiple_data(profile_urls, follower_number, cookies)
 
     if experience_datas:
         records = []

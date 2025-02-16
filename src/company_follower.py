@@ -1,11 +1,11 @@
-from .data_processor import get_experience_data, get_experience_datas
+from .data_processor import get_experience_datas
 from .data_fetcher import fetch_data
 import urllib.parse
 from math import ceil
 import json
 
 # Load cookies from your linkedin_cookies.json (adjust path if necessary)
-def getfollowers(company_id, follower_number, current_timestamp):
+def getfollowers(company_id, follower_number, current_timestamp, cookies):
     
     request_num = ceil(int(follower_number)/100)
     followers = []
@@ -14,14 +14,14 @@ def getfollowers(company_id, follower_number, current_timestamp):
         if int(follower_number) > (j + 1) * 100: endPoint = 100 
         else: endPoint = int(follower_number) - j * 100
         startPoint = j * 100
-        followers.extend(getFollowerList(company_id, startPoint, endPoint, current_timestamp))
+        followers.extend(getFollowerList(company_id, startPoint, endPoint, current_timestamp, cookies))
 
     return followers
 
-def getFollowerList(company_id, startPoint, follower_number, current_timestamp):
+def getFollowerList(company_id, startPoint, follower_number, current_timestamp, cookies):
     url = f"https://www.linkedin.com/voyager/api/graphql?variables=(start:{startPoint},count:{follower_number},organizationalPage:urn%3Ali%3Afsd_organizationalPage%3A{company_id},followerType:MEMBER)&queryId=voyagerOrganizationDashFollowers.3ff930c92333c8fd237f011719ee1428"
 
-    data = fetch_data(url)
+    data = fetch_data(url, cookies)
 
     if data:
 
@@ -89,7 +89,7 @@ def getFollowerList(company_id, startPoint, follower_number, current_timestamp):
                     }
                     followers_info.append(follower_data)
 
-        experience_datas = get_experience_datas(member_urns, follower_number)
+        experience_datas = get_experience_datas(member_urns, follower_number, cookies)
 
         i = 0
         for element in followers_info:

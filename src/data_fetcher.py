@@ -1,9 +1,5 @@
 import requests
-from .cookie_loader import load_cookies
 from concurrent.futures import ThreadPoolExecutor, as_completed
-import json
-
-cookies = load_cookies('linkedin_cookies.json')
 
 headers = {
     "accept": "application/vnd.linkedin.normalized+json+2.1",
@@ -16,7 +12,7 @@ headers = {
     "x-restli-protocol-version": "2.0.0",
 }
 
-def fetch_data(url):
+def fetch_data(url, cookies):
     """
     Fetch data from the provided URL using requests.
     """
@@ -29,14 +25,14 @@ def fetch_data(url):
         print(f"Failed to fetch data. Status Code: {response.status_code}")
         return None
 
-def fetch_multiple_data(urls, follower_number):
+def fetch_multiple_data(urls, follower_number, cookies):
     """
     Fetch data concurrently from multiple URLs.
     """
     results = {}
     i = 1
     with ThreadPoolExecutor(max_workers=8) as executor:  # You can adjust max_workers based on your requirements
-        future_to_url = {executor.submit(fetch_data, url): url for url in urls}
+        future_to_url = {executor.submit(fetch_data, url, cookies): url for url in urls}
         for future in as_completed(future_to_url):
             print(f"Fetch user profile {i}/{follower_number}")
             url = future_to_url[future]
@@ -48,17 +44,3 @@ def fetch_multiple_data(urls, follower_number):
                 results[url] = None
             i += 1
     return results    
-
-def get_page_source(url):
-    """
-    Fetch data from the provided URL using requests.
-    """
-
-    response = requests.get(url, cookies=cookies, headers=headers)
-    
-    if response.status_code == 200:
-        return response
-    else:
-        print(f"Failed to fetch data. Status Code: {response.status_code}")
-        return None
-    

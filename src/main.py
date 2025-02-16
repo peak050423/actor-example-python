@@ -1,10 +1,7 @@
 from apify import Actor
 from datetime import datetime
 import platform
-import json
-import csv
 from .company_follower import getfollowers
-from .post_likers import getLikersList
 
 def get_current_timestamp():
     """
@@ -24,24 +21,26 @@ async def main():
         # Structure of input is defined in .actor/input_schema.json
         company_url = actor_input.get('company_url')
         follower_number = actor_input.get('follower_number')
-        cookies = actor_input.get('cookies')
-
-        print(cookies)
+        linkedin_cookies = actor_input.get('cookies')
 
         if follower_number is None:
             raise ValueError('followerNumber parameter is required')
         if company_url is None:
             raise ValueError('companyUrl parameter is required')
+        if linkedin_cookies is None:
+            raise ValueError("Cookies parameter is required")
 
 
         current_timestamp = get_current_timestamp()
+        cookies = {cookie['name']: cookie['value'] for cookie in linkedin_cookies}
         result = []
 
         if not company_url or not follower_number:
             raise ValueError('Missing required parameters for company scraper')
 
         company_id = company_url.split('/')[4]
-        followers_info = getfollowers(company_id, follower_number, current_timestamp)
+        followers_info = getfollowers(company_id, follower_number, current_timestamp, cookies)
+
 
         if not followers_info:
             raise ValueError('No data found')
@@ -51,7 +50,6 @@ async def main():
         # Structure of output is defined in .actor/actor.json
         print(f'Company_url: {company_url}')
         print(f'Follower number: {follower_number}')
-        print(f'Pushing data to the dataset', result)
 
         for row in result:
             await Actor.push_data(
