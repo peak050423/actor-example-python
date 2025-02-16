@@ -3,7 +3,7 @@ from datetime import datetime
 import platform
 import io
 import csv
-from src import getFollowerList, getLikersList
+from src import getfollowers, getLikersList
 
 def get_current_timestamp():
     """
@@ -40,7 +40,7 @@ async def main():
                 raise ValueError('Missing required parameters for company scraper')
 
             company_id = company_url.split('/')[4]
-            followers_info = getFollowerList(company_id, follower_number, current_timestamp)
+            followers_info = getfollowers(company_id, follower_number, current_timestamp)
 
             if not followers_info:
                 raise ValueError('No data found')
