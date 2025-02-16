@@ -70,11 +70,14 @@ async def main():
 
         # Structure of output is defined in .actor/actor.json
         print(f'Pushing data to the dataset', result)
+        print(f'Company_url: {company_url}')
+        print(f'Follower number: {follower_number}')
+        print(f'Scraper Type: {scraper_type}')
 
         await Actor.push_data([
             {
                 'company_url': company_url,
                 'follower_number': follower_number,
-                'sum': result,
+                'result': result,
             },
         ])
