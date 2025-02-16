@@ -20,8 +20,8 @@
 					"transformation": {
 						"fields": [
 							"sum",
-							"first_number",
-							"second_number"
+							"company_url",
+							"follower_number"
 						]
 					},
 					"display": {
@@ -29,14 +29,14 @@
 						"properties": {
 							"sum": {
 								"label": "Sum",
-								"format": "number"
+								"format": "string"
 							},
-							"first_number": {
-								"label": "First number",
-								"format": "number"
+							"company_url": {
+								"label": "Company Url",
+								"format": "string"
 							},
-							"second_number": {
-								"label": "Second number",
+							"follower_number": {
+								"label": "Follower Number",
 								"format": "number"
 							}
 						}
