@@ -4,14 +4,10 @@ import platform
 from .company_follower import getfollowers
 
 def get_current_timestamp():
-    """
-    Get current timestamp (cross-platform).
-    """
     current_datetime = datetime.now()
-    if platform.system() == "Windows":
-        return current_datetime.strftime('%#m-%d-%Y_%#I-%M-%p')
-    else:
-        return current_datetime.strftime('%-m-%d-%Y_%-I-%M-%p')
+    formatted_datetime = current_datetime.strftime('%#m-%d-%Y_%#I-%M-%p')
+
+    return formatted_datetime
 
 async def main():
     async with Actor:
@@ -59,7 +55,7 @@ async def main():
                 "profileUrl": row.get('profileUrl'),
                 "imageUrl": row.get('imageUrl'),
                 "connectionDegree": row.get('connectionDegree'),
-                "timestamp": row.get('timestamp'),
+                "timestamp": current_timestamp,
                 "followedAt": row.get('followedAt'),
                 "positionTitle": row.get('positionTitle'),
                 "companyLogo": row.get('companyLogo'),
