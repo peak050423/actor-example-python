@@ -57,7 +57,7 @@
 							},
 							"timestamp": {
 								"label": "timestamp",
-								"format": "date"
+								"format": "string"
 							},
 							"followedAt": {
 								"label": "followedAt",
