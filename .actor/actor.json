@@ -33,7 +33,7 @@
 							},
 							"company_url": {
 								"label": "Company Url",
-								"format": "number"
+								"format": "string"
 							},
 							"follower_number": {
 								"label": "Follower number",
