@@ -4,15 +4,11 @@
   "schemaVersion": 1,
   "properties": {
     "company_url": {
-      "title": "Start URLs",
-      "type": "array",
-      "description": "URLs to start with",
-      "prefill": [
-        {
-          "url": "https://apify.com"
-        }
-      ],
-      "editor": "requestListSources"
+      "title": "Company Url",
+      "type": "string",
+      "description": "The number you want to add to the second number.",
+      "editor": "textfield",
+      "prefill": "htttps://www.example.com"
     },
     "second_number": {
       "title": "Follower number",

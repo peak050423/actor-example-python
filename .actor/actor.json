@@ -31,8 +31,8 @@
 								"label": "Sum",
 								"format": "number"
 							},
-							"first_number": {
-								"label": "First number",
+							"company_url": {
+								"label": "Company Url",
 								"format": "number"
 							},
 							"second_number": {
