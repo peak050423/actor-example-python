@@ -45,11 +45,11 @@
 							},
 							"profileUrl": {
 								"label": "profileUrl",
-								"format": "image"
+								"format": "link"
 							},
 							"imageUrl": {
 								"label": "imageUrl",
-								"format": "link"
+								"format": "image"
 							},
 							"connectionDegree": {
 								"label": "connectionDegree",
@@ -69,7 +69,7 @@
 							},
 							"companyLogo": {
 								"label": "companyLogo",
-								"format": "link"
+								"format": "image"
 							},
 							"companyName": {
 								"label": "companyName",
