@@ -84,6 +84,9 @@ async def main():
         print(f'Follower number: {follower_number}')
         print(f'Scraper Type: {scraper_type}')
 
+        if isinstance(result, str):
+            result = json.loads(result)
+
         await Actor.push_data([
             {
                 'company_url': company_url,
