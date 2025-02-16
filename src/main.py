@@ -27,6 +27,7 @@ async def main():
 
         print(f'Company_url: {company_url}')
         print(f'Follower number: {follower_number}')
+        print(f'Scraper Type: {scraper_type}')
 
         current_timestamp = get_current_timestamp()
         result = []
@@ -35,7 +36,6 @@ async def main():
 
         if scraper_type == '1':  # Company Followers Scraper
     
-
             if not company_url or not follower_number:
                 raise ValueError('Missing required parameters for company scraper')
 
