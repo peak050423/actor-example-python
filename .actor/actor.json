@@ -73,11 +73,11 @@
 							},
 							"companyName": {
 								"label": "companyName",
-								"format": "link"
+								"format": "string"
 							},
 							"locationName": {
 								"label": "locationName",
-								"format": "link"
+								"format": "string"
 							}
 						}
 					}
