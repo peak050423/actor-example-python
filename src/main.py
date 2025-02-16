@@ -13,7 +13,7 @@ async def main():
         print(f'First number: {company_url}')
         print(f'Second number: {follower_number}')
 
-        result = company_url + follower_number
+        result = f"{company_url} {follower_number}"
 
         print(f'The result is: {result}')
 
