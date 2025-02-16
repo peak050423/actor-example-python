@@ -5,7 +5,7 @@
   "properties": {
     "cookies": {
       "title": "Cookies",
-      "type": "json",
+      "type": "array",
       "description": "The cookie value to be used for the scraping session.",
       "editor": "json",
       "prefill": {}
