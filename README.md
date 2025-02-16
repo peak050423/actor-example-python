@@ -1,6 +1,11 @@
-# Python Actor example
+# LinkedIn Company Follower Scraper
 
-This is an example Apify Actor written in Python.
+This actor extracts data from a specified LinkedIn company URL, including the post's content, author, and publication date.
 
-It doesn't do much, it just reads two numbers from its input,
-it sums them together, and it pushes the results to the Actor's default dataset.
+## Use Cases
+
+-   **Content Analysis**: Analyze the content of specific LinkedIn posts for sentiment or keyword extraction.
+-   **Data Aggregation**: Collect data from multiple follower profiles.
+-   **Monitoring**: Track engagement metrics of particular posts over time.
+
+This powerful tool helps actors and industry professionals gather valuable liker information from posts on LinkedIn. By using hidden APIs, this scraper provides access to data that enhances networking efforts.
