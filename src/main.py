@@ -68,6 +68,8 @@ async def main():
             print(f'The result is: {result}')
 
         # Structure of output is defined in .actor/actor.json
+        print(f'Pushing data to the dataset', result)
+
         await Actor.push_data([
             {
                 'company_url': company_url,
