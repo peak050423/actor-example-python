@@ -3,15 +3,15 @@
   "type": "object",
   "schemaVersion": 1,
   "properties": {
-    "company_url": {
-      "title": "Company URL",
-      "type": "string",
+    "first_number": {
+      "title": "First integer",
+      "type": "integer",
       "description": "The number you want to add to the second number.",
-      "editor": "textfield",
-      "prefill": "https://www.example.com"
+      "editor": "number",
+      "prefill": 1
     },
-    "follower_number": {
-      "title": "Follower Number",
+    "second_number": {
+      "title": "Second integer",
       "type": "integer",
       "description": "The number you want to add to the first number.",
       "editor": "number",
@@ -19,7 +19,7 @@
     }
   },
   "required": [
-    "company_url",
-    "follower_number"
+    "first_number",
+    "second_number"
   ]
 }
