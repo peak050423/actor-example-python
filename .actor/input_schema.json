@@ -8,7 +8,7 @@
       "type": "object",
       "description": "The cookie value to be used for the scraping session.",
       "editor": "json",
-      "prefill": "{}"
+      "prefill": {}
     },
     "company_url": {
       "title": "Company Url",
