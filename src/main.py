@@ -1,7 +1,7 @@
 from apify import Actor
 from datetime import datetime
 import platform
-import json
+import io
 import csv
 from .company_follower import getfollowers
 from .post_likers import getLikersList
