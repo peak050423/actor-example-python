@@ -1,49 +1,43 @@
-	{
-		"actorSpecification": 1,
-		"name": "linkedin-scraper",
-		"title": "LinkedIn Scraper",
-		"description": "Scrapers for LinkedIn, designed to efficiently gather data on company followers and post likers. By consolidating the scraping and enrichment processes, these scrapers aim to streamline data collection and reduce costs compared to existing methods.",
-		"version": "0.0",
-		"meta": {
-			"templateId": "python-start"
-		},
-		"input": "./input_schema.json",
-		"readme": "../README.md",
-		"dockerfile": "./Dockerfile",
-		"storages": {
-			"dataset": {
-				"actorSpecification": 1,
-				"title": "LinkedIn Scraper",
-				"views": {
-					"results": {
-						"title": "Screped Results",
-						"transformation": {
-							"fields": [
-								"result",
-								"company_url",
-								"follower_number",
-								"result.positionTitle"
-							]
-						},
-						"display": {
-							"component": "table",
-							"properties": {
-								"result": {
-									"label": "Result",
-									"format": "json"
-								},
-								"company_url": {
-									"label": "Company Url",
-									"format": "string"
-								},
-								"follower_number": {
-									"label": "Follower number",
-									"format": "number"
-								},
-								"result.positionTitle": {
-									"label": "Position Title",
-									"format": "string"
-								}
+{
+	"actorSpecification": 1,
+	"name": "linkedin-scraper",
+	"title": "LinkedIn Scraper",
+	"description": "Scrapers for LinkedIn, designed to efficiently gather data on company followers and post likers. By consolidating the scraping and enrichment processes, these scrapers aim to streamline data collection and reduce costs compared to existing methods.",
+	"version": "0.0",
+	"meta": {
+		"templateId": "python-start"
+	},
+	"input": "./input_schema.json",
+	"readme": "../README.md",
+	"dockerfile": "./Dockerfile",
+	"storages": {
+		"dataset": {
+			"actorSpecification": 1,
+			"title": "LinkedIn Scraper",
+			"views": {
+				"results": {
+					"title": "Scraped Results",
+					"transformation": {
+						"fields": [
+							"company_url",
+							"follower_number",
+							"result.positionTitle"
+						]
+					},
+					"display": {
+						"component": "table",
+						"properties": {
+							"company_url": {
+								"label": "Company URL",
+								"format": "string"
+							},
+							"follower_number": {
+								"label": "Follower Number",
+								"format": "number"
+							},
+							"result.positionTitle": {
+								"label": "Position Title",
+								"format": "string"
 							}
 						}
 					}
@@ -51,3 +45,4 @@
 			}
 		}
 	}
+}
