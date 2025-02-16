@@ -20,7 +20,7 @@
 					"transformation": {
 						"fields": [
 							"sum",
-							"first_number",
+							"company_url",
 							"second_number"
 						]
 					},
