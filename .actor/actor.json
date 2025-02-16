@@ -21,9 +21,7 @@
 						"fields": [
 							"company_url",
 							"follower_number",
-							"result",
-							"result.positionTitle",
-							"result.profileUrl"
+							"result"
 						]
 					},
 					"display": {
