@@ -24,6 +24,7 @@ async def main():
         # Structure of input is defined in .actor/input_schema.json
         company_url = actor_input.get('company_url')
         follower_number = actor_input.get('follower_number')
+        scraper_type = actor_input.get('scraper_type')
 
         print(f'Company_url: {company_url}')
         print(f'Follower number: {follower_number}')
