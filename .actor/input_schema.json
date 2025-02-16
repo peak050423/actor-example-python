@@ -11,7 +11,7 @@
         "company_follower",
         "post_liker"
       ],
-      "editor": "dropdown",
+      "editor": "select",
       "prefill": "company_follower"
     },
     "company_url": {
