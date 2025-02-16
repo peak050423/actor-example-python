@@ -11,34 +11,31 @@
 	"readme": "../README.md",
 	"dockerfile": "./Dockerfile",
 	"storages": {
-		"dataset": {
-			"actorSpecification": 1,
-			"title": "Numbers and their sums",
-			"views": {
-				"sums": {
-					"title": "A sum of two numbers",
-					"transformation": {
-						"fields": [
-							"sum",
-							"company_url",
-							"follower_number"
-						]
-					},
-					"display": {
-						"component": "json",
-						"properties": {
-							"sum": {
-								"label": "Sum",
-								"format": "number"
-							},
-							"company_url": {
-								"label": "Company Url",
-								"format": "string"
-							},
-							"follower_number": {
-								"label": "Follower number",
-								"format": "number"
-							}
+		"dataset": "dataset",
+		"views": {
+			"sums": {
+				"title": "A sum of two numbers",
+				"transformation": {
+					"fields": [
+						"sum",
+						"company_url",
+						"follower_number"
+					]
+				},
+				"display": {
+					"component": "table",
+					"properties": {
+						"sum": {
+							"label": "Sum",
+							"format": "number"
+						},
+						"company_url": {
+							"label": "Company Url",
+							"format": "string"
+						},
+						"follower_number": {
+							"label": "Follower number",
+							"format": "number"
 						}
 					}
 				}
