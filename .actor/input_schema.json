@@ -1,25 +1,47 @@
 {
-  "title": "Add two integers",
-  "type": "object",
-  "schemaVersion": 1,
-  "properties": {
-    "company_url": {
-      "title": "Company URL",
-      "type": "string",
-      "description": "The number you want to add to the second number.",
-      "editor": "textfield",
-      "prefill": "https://www.example.com"
-    },
-    "follower_number": {
-      "title": "Follower Number",
-      "type": "integer",
-      "description": "The number you want to add to the first number.",
-      "editor": "number",
-      "prefill": 2
-    }
+  "actorSpecification": 1,
+  "name": "python-example",
+  "title": "Python Example",
+  "description": "Example Python Actor showing how to read the Actor input and push results to a dataset.",
+  "version": "0.0",
+  "meta": {
+    "templateId": "python-start"
   },
-  "required": [
-    "company_url",
-    "follower_number"
-  ]
+  "input": "./input_schema.json",
+  "readme": "../README.md",
+  "dockerfile": "./Dockerfile",
+  "storages": {
+    "dataset": {
+      "title": "Numbers and their sums",
+      "views": {
+        "sums": {
+          "title": "A sum of two numbers",
+          "transformation": {
+            "fields": [
+              "sum",
+              "company_url",
+              "follower_number"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "sum": {
+                "label": "Sum",
+                "format": "string"
+              },
+              "company_url": {
+                "label": "Company Url",
+                "format": "string"
+              },
+              "follower_number": {
+                "label": "Follower Number",
+                "format": "number"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
