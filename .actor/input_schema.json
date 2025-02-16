@@ -28,7 +28,6 @@
   },
   "required": [
     "cookies",
-    "company_url",
-    "follower_number"
+    "company_url"
   ]
 }
