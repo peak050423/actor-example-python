@@ -1,5 +1,5 @@
 {
-  "title": "Add two integers",
+  "title": "Linkedin Scraper",
   "type": "object",
   "schemaVersion": 1,
   "properties": {
@@ -17,20 +17,61 @@
     "company_url": {
       "title": "Company Url",
       "type": "string",
-      "description": "The number you want to add to the second number.",
+      "description": "The company URL you want to scrape follower information from.",
       "editor": "textfield",
       "prefill": "https://www.example.com"
     },
     "follower_number": {
       "title": "Follower number",
       "type": "integer",
-      "description": "The number you want to add to the first number.",
+      "description": "The follower count you want to scrape.",
       "editor": "number",
       "prefill": 2
+    },
+    "post_url": {
+      "title": "Post Url",
+      "type": "string",
+      "description": "The post URL you want to scrape liker information from.",
+      "editor": "textfield",
+      "prefill": "https://www.example.com"
+    }
+  },
+  "dependencies": {
+    "company_url": {
+      "oneOf": [
+        {
+          "properties": {
+            "scraper_type": {
+              "enum": [
+                "Company Follower"
+              ]
+            }
+          },
+          "required": [
+            "company_url",
+            "follower_number"
+          ]
+        }
+      ]
+    },
+    "post_url": {
+      "oneOf": [
+        {
+          "properties": {
+            "scraper_type": {
+              "enum": [
+                "Post Liker"
+              ]
+            }
+          },
+          "required": [
+            "post_url"
+          ]
+        }
+      ]
     }
   },
   "required": [
-    "company_url",
-    "follower_number"
+    "scraper_type"
   ]
 }
