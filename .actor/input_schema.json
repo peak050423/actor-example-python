@@ -21,7 +21,6 @@
       "editor": "textfield",
       "prefill": "https://www.example.com",
       "pattern": "^https://www\\.linkedin\\.com/company/\\d+/admin/dashboard/$",
-      "errorMessage": "Invalid LinkedIn company URL format. Example: https://www.linkedin.com/company/71658149/admin/dashboard/"
     },
     "follower_number": {
       "title": "Follower number",
@@ -37,7 +36,6 @@
       "editor": "textfield",
       "prefill": "https://www.example.com",
       "pattern": "^https://www\\.linkedin\\.com/feed/update/urn:li:activity:[a-zA-Z0-9]+$",
-      "errorMessage": "Invalid LinkedIn post URL format. Example: https://www.linkedin.com/feed/update/urn:li:activity:7290005105632808961"
     }
   },
   "required": [
