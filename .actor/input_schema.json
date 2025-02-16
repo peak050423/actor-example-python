@@ -7,7 +7,7 @@
       "title": "Cookies",
       "type": "string",
       "description": "The cookie value to be used for the scraping session.",
-      "editor": "textfield",
+      "editor": "textarea",
       "prefill": "your_cookie_here"
     },
     "company_url": {
