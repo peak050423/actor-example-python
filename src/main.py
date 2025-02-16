@@ -3,7 +3,8 @@ from datetime import datetime
 import platform
 import io
 import csv
-from company_follower import getfollowers, getLikersList
+from company_follower import getfollowers
+from post_likers import getLikersList
 
 def get_current_timestamp():
     """
