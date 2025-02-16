@@ -84,6 +84,8 @@ async def main():
         print(f'Follower number: {follower_number}')
         print(f'Scraper Type: {scraper_type}')
 
+        result = json.loads(result)     
+
         await Actor.push_data([
             result
         ])
