@@ -1,5 +1,6 @@
-from data_fetcher import fetch_data, fetch_multiple_data
+from .data_fetcher import fetch_data, fetch_multiple_data
 import urllib.parse
+import json
 from datetime import datetime
 import re
 

@@ -1,5 +1,5 @@
-from data_processor import get_experience_data, get_experience_datas
-from data_fetcher import fetch_data
+from .data_processor import get_experience_data, get_experience_datas
+from .data_fetcher import fetch_data
 import urllib.parse
 from math import ceil
 import json

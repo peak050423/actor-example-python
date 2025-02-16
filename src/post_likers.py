@@ -1,8 +1,8 @@
 import re
 from math import ceil
-from data_fetcher import fetch_data
-from data_fetcher import get_page_source
-from data_processor import get_experience_data, get_experience_datas
+from .data_fetcher import fetch_data
+from .data_fetcher import get_page_source
+from .data_processor import get_experience_data, get_experience_datas
 import urllib.parse
 
 def getLikersList(post_url, current_timestamp):
