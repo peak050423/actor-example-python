@@ -3,20 +3,23 @@
   "type": "object",
   "schemaVersion": 1,
   "properties": {
-    "first_number": {
-      "title": "First integer",
-      "type": "integer",
+    "company_url": {
+      "title": "Company URL",
+      "type": "string",
       "description": "The number you want to add to the second number.",
-      "editor": "number",
+      "editor": "string",
       "prefill": 1
     },
-    "second_number": {
-      "title": "Second integer",
+    "follower_number": {
+      "title": "Follower Number",
       "type": "integer",
       "description": "The number you want to add to the first number.",
       "editor": "number",
       "prefill": 2
     }
   },
-  "required": ["first_number", "second_number"]
+  "required": [
+    "company_url",
+    "follower_number"
+  ]
 }
