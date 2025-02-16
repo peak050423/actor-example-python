@@ -19,7 +19,7 @@
     }
   },
   "required": [
-    "first_number",
+    "company_url",
     "second_number"
   ]
 }
