@@ -84,8 +84,19 @@ async def main():
         print(f'Follower number: {follower_number}')
         print(f'Scraper Type: {scraper_type}')
 
-        result = json.loads(result)     
-
-        await Actor.push_data([
-            result
-        ])
+        for row in result:
+            await Actor.push_data(
+            {
+                "fullName": row.get('fullName'),
+                "jobTitle": row.get('jobTitle'),
+                "profileUrl": row.get('profileUrl'),
+                "imageUrl": row.get('imageUrl'),
+                "connectionDegree": row.get('connectionDegree'),
+                "timestamp": row.get('timestamp'),
+                "followedAt": row.get('followedAt'),
+                "positionTitle": row.get('positionsTitle'),
+                "companyLogo": row.get('companyLogo'),
+                "companyName": row.get('companyName'),
+                "locationName": row.get('locationName')
+            }
+        )
