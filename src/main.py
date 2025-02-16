@@ -24,6 +24,9 @@ async def main():
         # Structure of input is defined in .actor/input_schema.json
         company_url = actor_input.get('company_url')
         follower_number = actor_input.get('follower_number')
+        cookies = actor_input.get('cookies')
+
+        print(cookies)
 
         if follower_number is None:
             raise ValueError('followerNumber parameter is required')
