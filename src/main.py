@@ -91,6 +91,6 @@ async def main():
             {
                 'company_url': company_url,
                 'follower_number': follower_number,
-                'result': json.loads(result),
+                'result': result,
             },
         ])
