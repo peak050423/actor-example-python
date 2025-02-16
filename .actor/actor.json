@@ -36,7 +36,7 @@
 								"format": "string"
 							},
 							"follower_number": {
-								"label": "Follower Number",
+								"label": "Follower_Number",
 								"format": "number"
 							}
 						}
