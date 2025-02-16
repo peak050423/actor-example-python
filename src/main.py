@@ -94,7 +94,7 @@ async def main():
                 "connectionDegree": row.get('connectionDegree'),
                 "timestamp": row.get('timestamp'),
                 "followedAt": row.get('followedAt'),
-                "positionTitle": row.get('positionsTitle'),
+                "positionTitle": row.get('positionTitle'),
                 "companyLogo": row.get('companyLogo'),
                 "companyName": row.get('companyName'),
                 "locationName": row.get('locationName')
