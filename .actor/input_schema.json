@@ -15,7 +15,7 @@
       "type": "string",
       "description": "The company URL you want to scrape follower information from.",
       "editor": "textfield",
-      "prefill": "https://www.linkedin.com/company/71658149/admin/dashboard/",
+      "prefill": "https://www.linkedin.com/company/1234567890/admin/dashboard/",
       "pattern": "^https://www\\.linkedin\\.com/company/\\d+/admin/dashboard/$"
     },
     "follower_number": {
