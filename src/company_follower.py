@@ -11,7 +11,7 @@ def getfollowers(company_id, follower_number, current_timestamp, cookies):
     followers = []
 
     for j in range(request_num):
-        if int(follower_number) > (j + 1) * 100: endPoint = 100 
+        if int(follower_number) >= (j + 1) * 100: endPoint = 100 
         else: endPoint = int(follower_number) - j * 100
         startPoint = j * 100
         followers.extend(getFollowerList(company_id, startPoint, endPoint, current_timestamp, cookies))
